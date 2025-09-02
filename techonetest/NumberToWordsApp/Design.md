@@ -1,7 +1,7 @@
 # Design Rationale: Number to Words Converter
 
 ## Language Used
-During my university courses, I extensively used **Java**, especially in game development, and have written unit tests in Java using **JUnit** and **Mockito**, managing builds and test execution with Maven. I have applied the same principles here. I am also learning **C#** and doing unit tests with it.
+During my university courses, I primariliy used **Java**, especially in game development, and have written unit tests in Java using **JUnit** and **Mockito**, managing builds and test execution with Maven Some examples-https://github.com/UQcsse3200/2024-studio-2/commit/473d1fd7c1f76ac6e65740f62e80ac66436c17dd, https://github.com/UQcsse3200/2024-studio-2/commit/239435951fcd8d6733c5aa43b4435eeb08aaddcf . I have applied the same principles here. I am also learning **C#** and doing unit tests with it.
 
 ## Approach Used
 The solution uses an **iterative approach with a stack** to convert numbers into words. Numbers are processed in chunks of three digits (hundreds, tens, ones), starting from the smallest group (units) and moving up to thousands, millions, etc. The stack helps reverse the order so the final words come out correctly.
