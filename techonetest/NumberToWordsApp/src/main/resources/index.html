@@ -1,15 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Number to Words</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #333;
+            min-height: 24px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Number to Words Converter</h1>
-    <form method="post" action="/convert">
-        <label>Enter number:</label>
-        <input type="text" name="number" required>
-        <button type="submit">Convert</button>
-    </form>
+    <div class="container">
+        <h1>Number to Words Converter</h1>
+        <form method="post" action="/convert">
+            <label for="number">Enter number:</label>
+            <input type="text" id="number" name="number" placeholder="e.g., 123.45" required>
+            <button type="submit">Convert</button>
+        </form>
+        <div class="output">
+            <!-- Result will appear here after submission -->
+        </div>
+    </div>
 </body>
 </html>
-cd NumberToWordsApp
