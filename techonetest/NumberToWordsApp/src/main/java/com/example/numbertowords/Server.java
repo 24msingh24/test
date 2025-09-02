@@ -13,6 +13,7 @@ import java.nio.file.Paths;
  */
 public class Server {
     private int port;
+    private HttpServer server; // make server a class field
 
     /**
      * Constructor to create server with a specific port.
@@ -28,7 +29,7 @@ public class Server {
     public void start() {
         try {
             // Create HTTP server on the specified port
-            HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
+            server = HttpServer.create(new InetSocketAddress(port), 0);
 
             // Context for serving the main HTML page
             server.createContext("/", (exchange -> {
@@ -74,6 +75,16 @@ public class Server {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Stops the HTTP server.
+     */
+    public void stop() {
+        if (server != null) {
+            server.stop(0);
+            System.out.println("Server stopped.");
         }
     }
 }
